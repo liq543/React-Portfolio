@@ -7,12 +7,12 @@ html, body {
     display: flex;
     align-items: center;
     font-size: 8vw;
-    color: limegreen;
+    color: rgb(34 197 94);
     font-family: 'vt323', monospace;
 }
 
 .its-gween {
-    color: limegreen;
+    color: rgb(34 197 94);
 }
 
 .terminal-letter {
@@ -31,6 +31,7 @@ body {
     color: white;
     padding-top: 20px;
     padding-left: 20px;
+    padding-right: 20px;
   }
   
   #switch {
