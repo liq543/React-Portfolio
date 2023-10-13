@@ -8,6 +8,11 @@ html, body {
     align-items: center;
     font-size: 4rem;
     color: limegreen;
+    font-family: 'vt323', monospace;
+}
+
+.its-gween {
+    color: limegreen;
 }
 
 .terminal-letter {

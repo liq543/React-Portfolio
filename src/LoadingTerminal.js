@@ -3,27 +3,30 @@ import './LoadingTerminal.css';
 
 const LoadingTerminal = () => {
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const doneText = "DONE!";
     const targetText = "LOADING PORTFOLIO...";
 
-    const [loadingComplete, setLoadingComplete] = useState(false); // Track if the "LOADING PORTFOLIO..." animation is complete
+    const [currentText, setCurrentText] = useState(targetText);
+    const [loadingComplete, setLoadingComplete] = useState(false);
     const [progress, setProgress] = useState(0);
     const [loadingMessage, setLoadingMessage] = useState("");
-    const loadingElements = ["Header", "Contact Info", "Projects", "Testimonials", "Footer", "CSS Styles", "Images", "Animations"];
+    const loadingElements = ["Header", "Contact Info", "Projects", "Resume", "Elements", "CSS Styles", "Images", "Animations"];
+    const [fadeOut, setFadeOut] = useState(false);
 
-    const animateLetter = (idx) => {
+    const animateLetter = (idx, target) => {
         const element = document.querySelector(`.terminal-letter[data-index="${idx}"]`);
         if (!element) return;
 
-        const letter = element.dataset.value;
+        const letter = target[idx];
 
-        if (letter === ' ') { // If space character, skip animation
-            element.style.display = 'inline'; // Show the space character
+        if (letter === ' ') {
+            element.style.display = 'inline';
             const nextIndex = idx + 1;
-            setTimeout(() => animateLetter(nextIndex), 10); // Delay before animating next character
+            setTimeout(() => animateLetter(nextIndex, target), 10);
             return;
         }
 
-        element.style.display = 'inline'; // Display the character
+        element.style.display = 'inline';
 
         let iteration = 0;
 
@@ -33,28 +36,34 @@ const LoadingTerminal = () => {
             } else {
                 element.innerText = letter;
                 clearInterval(interval);
-                if (idx < targetText.length - 1) {
+                if (idx < target.length - 1) {
                     const nextIndex = idx + 1;
-                    setTimeout(() => animateLetter(nextIndex), 10);
-                } else {
-                    setLoadingComplete(true); // Animation complete
+                    setTimeout(() => animateLetter(nextIndex, target), 10);
+                } else if (target === targetText) {
+                    setLoadingComplete(true);
+                    setTimeout(() => {
+                        setCurrentText(doneText);
+                        animateLetter(0, doneText);
+                    }, 1000);
+                } else if (target === doneText) {
+                    setTimeout(() => setFadeOut(true), 1000);
                 }
             }
             iteration++;
         };
 
-        const interval = setInterval(animation, 10);
+        const interval = setInterval(animation, 5);
     };
 
     useEffect(() => {
-        animateLetter(0);
-    }, []);
+        animateLetter(0, currentText);
+    }, [currentText]);
 
     useEffect(() => {
-        if (loadingComplete) {
+        if (loadingComplete && currentText === targetText) {
             if (progress >= 100) {
                 setProgress(100);
-                setLoadingMessage("ERROR");
+                setLoadingMessage("DONE!");
                 return;
             }
             if (progress > 0 && progress < 100) {
@@ -63,48 +72,41 @@ const LoadingTerminal = () => {
             }
             const interval = setInterval(() => {
                 setProgress(prev => prev + 12.5);
-            }, 1000);
+            }, 100);
 
             return () => clearInterval(interval);
         }
-    }, [loadingComplete, progress]);
+    }, [loadingComplete, progress, currentText]);
 
     return (
-<div className="terminal-container">
-    <div className="container">
-        <div className="screen-content">
-            <div className="loading-display">
-                {progress < 100 ? (
-                    <h1 className="terminal-text">
-                        {targetText.split("").map((char, idx) => (
-                            <span 
-                                key={idx} 
-                                data-value={char}
-                                data-index={idx}
-                                className={idx === targetText.length - 1 ? "terminal-letter blink-cursor" : "terminal-letter"}
-                            >
-                                {char === ' ' ? ' ' : (loadingComplete ? char : letters[Math.floor(Math.random() * 26)])}
-                            </span>
-                        ))}
-                    </h1>
-                ) : (
-                    <h1 className="error-text">ERROR</h1>
-                )}
-            </div>
+        <div className="terminal-container">
+            <div className="container">
+                <div className="screen-content" style={fadeOut ? { opacity: 0, transition: 'opacity 1s ease-out' } : {}}>
+                    <div className="loading-display">
+                        <h1 className="terminal-text">
+                            {currentText.split("").map((char, idx) => (
+                                <span 
+                                    key={idx} 
+                                    data-value={char}
+                                    data-index={idx}
+                                    className={idx === currentText.length - 1 ? "terminal-letter blink-cursor" : "terminal-letter"}
+                                >
+                                    {char === ' ' ? ' ' : (loadingComplete && char === currentText[idx] ? char : letters[Math.floor(Math.random() * 26)])}
+                                </span>
+                            ))}
+                        </h1>
+                    </div>
 
-            {progress > 0 && progress < 100 && (
-                <div className="progress-container fade-in">
-                    <div className="progress-bar" style={{ width: `${progress}%` }}></div>
-                    <div className="loading-message">{loadingMessage}</div>
+                    {progress > 0 && progress < 100 && (
+                        <div className="progress-container fade-in">
+                            <div className="progress-bar" style={{ width: `${progress}%` }}></div>
+                            <div className="loading-message">{loadingMessage}</div>
+                        </div>
+                    )}
                 </div>
-            )}
-
-            {progress === 100 && <div className="error-message">Failed to load Portfolio, consider hiring Griffin to fix it.</div>}
+                <iframe className="screen" src="about:blank" title="CRT Screen"></iframe>
+            </div>
         </div>
-        <iframe className="screen" src="about:blank" title="CRT Screen"></iframe>
-    </div>
-</div>
-
     );
 }
 
