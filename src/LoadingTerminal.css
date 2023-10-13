@@ -6,7 +6,7 @@ html, body {
 .terminal-text {
     display: flex;
     align-items: center;
-    font-size: 4rem;
+    font-size: 8vw;
     color: limegreen;
     font-family: 'vt323', monospace;
 }
@@ -18,7 +18,7 @@ html, body {
 .terminal-letter {
     display: none;
     transition: all 0.2s;
-    font-size: 4rem;
+    font-size: 8vw;
 }
 
 /* Add this */
