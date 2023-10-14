@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './LoadingTerminal.css';
 
-const LoadingTerminal = () => {
+const LoadingTerminal = ({onLoadingComplete}) => {
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const doneText = "DONE!";
     const targetText = "LOADING PORTFOLIO...";
@@ -46,7 +46,10 @@ const LoadingTerminal = () => {
                         animateLetter(0, doneText);
                     }, 1000);
                 } else if (target === doneText) {
-                    setTimeout(() => setFadeOut(true), 1000);
+                    setTimeout(() => {
+                        setFadeOut(true);
+                        setLoadingComplete(true);  // This is the change
+                    }, 1000);
                 }
             }
             iteration++;
@@ -64,6 +67,9 @@ const LoadingTerminal = () => {
             if (progress >= 100) {
                 setProgress(100);
                 setLoadingMessage("DONE!");
+                setTimeout(() => {
+                    window.location.href = '/home';  // Navigate to home after loading is done
+                }, 1000);
                 return;
             }
             if (progress > 0 && progress < 100) {
