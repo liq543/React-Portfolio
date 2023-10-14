@@ -5,11 +5,14 @@ const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
+        setMenuOpen(prevState => {
+            return !prevState;
+        });
     };
+    
 
     return (
-        <header className="bg-black border-white border-2 p-4 flex justify-between items-center">
+    <header className="bg-black border-white border-2 p-4 flex justify-between items-center z-50 fixed crt">
             <h1 className="text-green-500 text-xl font-mono">Griffin Gore's Portfolio</h1>
 
             <nav className="hidden lg:block">
@@ -22,12 +25,12 @@ const Header = () => {
                 </ul>
             </nav>
             
-            <button onClick={toggleMenu} className="lg:hidden text-green-500 font-mono">
+            <button onClick={toggleMenu} className="lg:hidden text-green-500 font-mono z-60">
                 ☰
             </button>
 
             {menuOpen && (
-                <div className="absolute top-16 right-4 lg:hidden bg-black border-white border-2 p-4 w-48 z-10">
+                <div className="fixed top-16 right-4 lg:hidden bg-black border-white border-2 p-4 w-48 z-10">
                     <ul className="flex flex-col gap-4">
                         <li><Link to="/" onClick={toggleMenu} className="text-green-500 border-white border-2 px-4 py-2 hover:bg-green-500 hover:text-black font-mono block z-10">Home</Link></li>
                         <li><Link to="/projects" onClick={toggleMenu} className="text-green-500 border-white border-2 px-4 py-2 hover:bg-green-500 hover:text-black font-mono block z-10">Projects</Link></li>
