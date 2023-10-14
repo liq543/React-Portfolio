@@ -7,3 +7,7 @@
 .blinking-period {
     animation: blink 1s infinite;
 }
+
+.blinking {
+    animation: blink 1s infinite;
+}
