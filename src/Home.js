@@ -20,10 +20,10 @@ const Home = () => {
 
             <div className="screen-content mt-4 w-full md:w-3/4 lg:w-2/3">
                 <h1 className="text-center text-white font-mono text-3xl md:text-4xl lg:text-5xl mb-4 md:mb-6 mt-16">
-                    Hi, I'm Griffin, Your Full Stack Web Developer<span className="blinking-period">.</span>
+                    Hi, I'm Griffin. Your Full Stack Web Developer<span className="">.</span>
                 </h1>
                 <p className="text-center text-white font-mono text-xl md:text-2xl lg:text-3xl mb-4 md:mb-6">
-                    Click the links in the header to learn more about me<span className="blinking-period">.</span>
+                    Click the links in the header to learn more about me<span className="">.</span>
                 </p>
             </div>
         </div>
