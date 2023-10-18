@@ -36,7 +36,7 @@ A portfolio website showcasing the projects, resume, and other details of Griffi
 
 ## Usage
 
-The portfolio is deployed at [https://griffingore.com](https://griffingore.com).
+The portfolio is deployed at [http://griffingore.com](http://griffingore.com).
 
 Once the development server is running, open your browser and navigate to `http://localhost:3000/` (or the port you've configured).
 
