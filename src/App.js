@@ -11,6 +11,7 @@ import ContactScreen from './ContactScreen';
 import LoadingTerminal from './LoadingTerminal';
 import ProjectsScreen from './ProjectScreen';
 import Home from './Home'; // Make sure to import the Home component you've created
+import ResumeScreen from './ResumeScreen';
 
 function MainContent() {
     const navigate = useNavigate();
@@ -35,6 +36,7 @@ function MainContent() {
                 <Route path="/contact" element={<ContactScreen />} />
                 <Route path="/projects" element={<ProjectsScreen />} />
                 <Route path="/home" element={<Home />} />
+                <Route path="/resume" element={<ResumeScreen />} />
                 {/* You can add more routes as needed */}
             </Routes>
         </div>
