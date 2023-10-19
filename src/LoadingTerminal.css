@@ -373,3 +373,11 @@ body {
     background-size: 100% 2px, 3px 100%;
     pointer-events: none;
 }
+
+.icon {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import SocialLinks from './SocialLinks';
 const AboutMe = () => {
     return (
         <div className="crt mx-auto px-4 py-4 md:py-16 lg:py-24 flex flex-col items-center justify-center min-h-screen pt-20 lg:pt-24">
@@ -25,6 +25,9 @@ const AboutMe = () => {
                     Right now, I'm looking for an opportunity to blend my tech skills with my love for innovation in a Full Stack/Web Development role. Think we could be a good match? Let's chat and explore the possibilities!
                 </p>
             </div>
+            <div className="flex space-x-4 md:space-x-8 text-xl md:text-2xl mt-5">
+                    <SocialLinks />
+                </div>
         </div>
     );
 }
