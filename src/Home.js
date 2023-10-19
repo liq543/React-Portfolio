@@ -16,10 +16,10 @@ const Home = () => {
       className="crt flex flex-col items-center justify-center min-h-screen"
       style={{ opacity }}
     >
-      <div className="screen mb-4 md:mb-8 w-full h-auto"></div>  {/* You might want to adjust this iframe or remove it if it's not needed. */}
+      <div className="screen mb-4 md:mb-8 w-full h-auto"></div>
 
       <div className="text-center mt-4 w-full md:w-3/4 lg:w-2/3">
-        <h1 className="text-white font-mono text-3xl md:text-4xl lg:text-5xl mb-4 md:mb-6 mt-16">
+        <h1 className="text-white font-mono text-3xl md:text-4xl lg:text-5xl mb-4 md:mb-6">
           Hi, I'm Griffin. Your Full Stack Web Developer<span>.</span>
         </h1>
         <p className="text-white font-mono text-xl md:text-2xl lg:text-3xl mb-4 md:mb-6">
