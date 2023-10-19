@@ -18,7 +18,7 @@ const ContactScreen = () => {
       </div>
 
       <p className="text-white text-xl md:text-2xl text-center mt-10">
-        Feel free to connect with me on social media or send me an email. I'm always open to making new connections and exploring opportunities.
+        Feel free to connect with me on Github/LinkedIn or send me an email. I'm always open to making new connections and exploring opportunities.
       </p>
     </div>
   );
