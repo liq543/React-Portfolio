@@ -19,7 +19,7 @@ const AboutMe = () => {
                     Hey there! I'm Griffin. My journey into the world of Full Stack Development began at the University of Texas at Austin. But before that, I was deep into Finance studies at Bauer College. While I cherish every academic lesson, I believe the real magic happens when theory meets the real world. That's probably why I co-founded an online business during my time at Bauer. It wasn't just a venture; it was a testament to my drive to apply what I learn.
                 </p>
                 <p className="text-white font-mono text-lg md:text-xl lg:text-2xl mb-4 md:mb-6">
-                    But who am I outside of work and academics? Picture me strumming my guitar, crafting melodies, or whipping up a culinary masterpiece in the kitchen. Creativity for me isn't just a switch I turn off after work; it's woven into the fabric of who I am.
+                    Outside of work and academics, I spend my free time playing the guitar and experimenting with new recipes in the kitchen. These creative outlets are an important part of my life and contribute to who I am, extending beyond my professional and academic pursuits. They help me unwind and keep my mind sharp, ready to tackle any challenge that comes my way.
                 </p>
                 <p className="text-white font-mono text-lg md:text-xl lg:text-2xl">
                     Right now, I'm looking for an opportunity to blend my tech skills with my love for innovation in a Full Stack/Web Development role. Think we could be a good match? Let's chat and explore the possibilities!
