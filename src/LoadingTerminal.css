@@ -66,67 +66,67 @@ body {
   
   @keyframes flicker {
     0% {
-      opacity: 0.7024811243;
+      opacity: 1.0;
     }
     5% {
-      opacity: 0.9336861695;
+      opacity: 1.0;
     }
     10% {
-      opacity: 0.757182552;
+      opacity: 1.0;
     }
     15% {
-      opacity: 0.8745605877;
+      opacity: 1.0;
     }
     20% {
-      opacity: 0.7619871931;
+      opacity: 1.0;
     }
     25% {
-      opacity: 0.9787539125;
+      opacity: 1.0;
     }
     30% {
-      opacity: 0.549513782;
+      opacity: 1.0;
     }
     35% {
-      opacity: 0.814899403;
+      opacity: 1.0;
     }
     40% {
-      opacity: 0.3091709703;
+      opacity: 1.0;
     }
     45% {
-      opacity: 0.4220721664;
+      opacity: 1.0;
     }
     50% {
-      opacity: 0.8419192976;
+      opacity: 1.0;
     }
     55% {
-      opacity: 0.3511720758;
+      opacity: 1.0;
     }
     60% {
-      opacity: 0.7667439329;
+      opacity: 1.0;
     }
     65% {
-      opacity: 0.0980768822;
+      opacity: 1.0;
     }
     70% {
-      opacity: 0.5063596205;
+      opacity: 1.0;
     }
     75% {
-      opacity: 0.7583731835;
+      opacity: 1.0;
     }
     80% {
-      opacity: 0.8789553207;
+      opacity: 1.0;
     }
     85% {
-      opacity: 0.9241430535;
+      opacity: 1.0;
     }
     90% {
-      opacity: 0.8062224108;
+      opacity: 1.0;
     }
     95% {
-      opacity: 0.6510217806;
+      opacity: 1.0;
     }
     100% {
-      opacity: 0.1369986887;
+      opacity: 1.0;
     }
   }
   .container {
