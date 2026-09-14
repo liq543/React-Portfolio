@@ -1,75 +1,23 @@
-# Griffin Gore's Portfolio
+# griffingore.com
 
-A portfolio website showcasing the projects, resume, and other details of Griffin Gore.
+A single-page résumé site for Griffin Gore. Plain React, plain CSS, no dependencies beyond React itself.
 
-## Table of Contents
+## Run it
 
-1. [Features](#features)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [Technologies Used](#technologies-used)
-5. [Screenshots](#screenshots)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Contact](#contact)
+```
+npm install
+npm start
+```
 
-## Features
+## Build it
 
-- **Responsive Design**: The portfolio is designed to be responsive, ensuring a consistent experience across devices.
-- **Interactive Navigation**: Smooth transitions and interactive navigation elements enhance user experience.
-- **Downloadable Resume**: Users can view and download Griffin's resume directly from the site.
+```
+npm run build
+```
 
-## Installation
+## Editing content
 
-1. Clone the repository:
+All résumé content lives in [`src/resume.js`](src/resume.js) — profile, experience, skills, and education.
+The downloadable PDF is [`public/Griffin_Gore_Resume.pdf`](public/Griffin_Gore_Resume.pdf).
 
-``git clone https://github.com/liq543/React-Portfolio.git``
-
-2. Navigate to the project directory:
-``cd [project-folder-name]``
-
-3. Install the necessary dependencies:
-``npm install``
-
-4. Start the development server:
-``npm start``
-
-## Usage
-
-The portfolio is deployed at [http://www.griffingore.com](http://www.griffingore.com).
-
-Once the development server is running, open your browser and navigate to `http://localhost:3000/` (or the port you've configured).
-
-## Technologies Used
-
-- React.js
-- React Router
-- Tailwind CSS
-
-## Screenshots
-
-![image](https://i.imgur.com/FGMzW4V.png)
-
-## Contributing
-
-If you're interested in contributing to the project:
-
-1. Fork the repository.
-2. Create a new branch.
-3. Make your changes.
-4. Submit a pull request.
-
-## License
-
-This project is licensed under the MIT License.
-
-## Contact
-
-If you have questions or feedback, please reach out to:
-
-- **Email**: [griffingore97@gmail.com]
-- **GitHub**: @[liq543]
-
----
-
-© 2023 Griffin Gore. All rights reserved.
+Layout is [`src/App.js`](src/App.js); styling is [`src/index.css`](src/index.css).
